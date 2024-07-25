@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BBCnews</title>
+  <link rel="stylesheet" href="output.css">
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="w-[100%] bg-[#051D39] flex justify-center items-center">
+      <div class="w-[82vw] flex items-center"> 
+        <div class="text-white flex"><i class="fa-solid fa-bolt"></i></div>
+        <div class="slider">
+          <div class="slide-track"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <nav class="bg-white border-gray-200 dark:bg-gray-900 border-b-2">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
+        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">BBCnews</span>
+      </a>
+      <button data-collapse-toggle="navbar-default" type="button"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        aria-controls="navbar-default" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M1 1h15M1 7h15M1 13h15" />
+        </svg>
+      </button>
+      <div class="hidden w-full md:flex md:w-auto" id="navbar-default">
+        <ul id="listMenu"
+          class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+        </ul>
+        <div onclick="mostViewed()" class="rounded-full border table px-2 py-1 my-4 md:mx-4 md:my-0 cursor-pointer">
+          <span>Ən çox izlənilən xəbər</span>
+        </div>
+      </div>
+
+    </div>
+
+    </div>
+  </nav>
+
+
+
+  <!-- H A V A   M E L U M A T L A R I -->
+
+  <div class="flex gap-5 md:flex-row flex-col max-w-screen-2xl m-auto p-4 border-b">
+    <div class="md:w-[50%]">
+      <div class="my-5"><input type="text" placeholder="Şəhər adı daxil edin..." id="region" class="rounded-lg"></div>
+      <div style="background: linear-gradient(0deg, #d8eeee, #d8eeee 25%, #64adc9 65%, #005986 90%, #005986);"
+        class="max-w-[632px] border text-white rounded-lg">
+        <div class="p-5 border-b flex justify-between items-center font-bold">
+          <h2 class="uppercase">Current weather</h2>
+          <p id="clock"></p>
+        </div>
+        <div class="flex flex-col  lg:flex-row lg:justify-between  items-center  p-3">
+          <div class="lg:w-[50%] w-full flex justify-start items-center">
+            <div class=""><img width="150px" id="image" src="img/176.webp" alt=""></div>
+            <div class="">
+              <div class="flex items-end ">
+                <p id="tempC" class="text-6xl font-bold">33°</p>
+                <sub class="text-2xl">c</sub>
+              </div>
+            </div>
+          </div>
+          <div class="lg:w-[50%] w-full font-bold">
+            <div class="hidden border-b  md:flex justify-between py-3 w-full">
+              <p>Temperature Fahrenheit</p>
+              <p class="font-bold" id="tempFR">92°F</p>
+            </div>
+            <div class="flex border-b justify-between py-3">
+              <p>Wind</p>
+              <p id="wind">NNW 18 km/h</p>
+            </div>
+            <div class="hidden border-b  md:flex justify-between py-3">
+              <p>Wind Gust</p>
+              <p id="gust">22 km/h</p>
+            </div>
+            <div class="flex border-b  justify-between py-3">
+              <p id="country">Azerbaijan</p>
+              <p id="city">Baku</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- S E A R C H   N E W S   S E C T I O N -->
+      <div class="my-4 ">
+        <input class="w-[280px] rounded-lg border bg-white outline-none" oninput="searchNews()" id="search" type="text"
+          placeholder="Xəbər adı daxil edin...">
+        <div id="newsSearch" class="w-[280px] flex flex-col ">
+        </div>
+      </div>
+    </div>
+    <div class="md:w-[50%] md:block hidden bg-white rounded-lg shadow-2xl p-3">
+      <h2 class="text-3xl font-bold uppercase text-red-500 border-b-2 py-2">News</h2>
+      <div id="news" class="flex flex-wrap w-full my-2"></div>
+    </div>
+  </div>
+
+
+  <div class="w-full flex justify-center items-center">
+    <div id="loading" class="w-20 h-20 border-4 border-dashed rounded-full animate-spin bg-black"></div>
+  </div>
+  <main class="max-w-screen-2xl flex flex-wrap  justify-center mx-auto p-4 gap-5 ">
+  </main>
+
+
+  <footer class="bg-[#EFF1F0] w-full lg:px-14 py-11 border-t-2">
+    <div class="max-w-screen-2xl lg:m-auto p-4 flex gap-6 justify-evenly flex-col lg:flex-row">
+      <div>
+        <img src="img/logo-big.svg" alt="oxuAz">
+      </div>
+      <div class="max-w-96">
+        <p>Bütün hüquqlar qorunur © 2013-2024</p>
+        <p>Oxu.Az 24 saat ərzində, Azərbaycan və rus dillərində, ölkədə və dünyada baş verən ən aktual və maraqlı
+          hadisələr barədə operativ xəbərlər, oxucuları və cəmiyyəti maraqlandıran suallara cavablar, analitik
+          məqalələr, foto və videohesabatlar hazırlayır.</p>
+      </div>
+      <div>
+        <div>
+          <h2 class="font-bold mb-2">Karyera</h2>
+          <a href="" class="border-b border-[#333]">cv@oxu.az</a>
+        </div>
+        <div>
+          <h2 class="font-bold mb-2">Ümumi sorğular üçün</h2>
+          <p class="mb-2"><a href="" class="border-b border-[#333]">editor@oxu.az</a></p>
+          <p><a href="" class="border-b border-[#333]">055 224 76 86</a></p>
+        </div>
+      </div>
+      <div>
+        <ul>
+          <li><a href="" class="border-b border-[#333]">Saytda reklam</a></li>
+          <li><a href="" class="border-b border-[#333]">Bizimlə əlaqə</a></li>
+          <li><a href="" class="border-b border-[#333]">Məxfilik siyasəti</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+  <script src="js/showNews.js"></script>
+  <script src="js/hava.js"></script>
+</body>
+
+</html>

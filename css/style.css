@@ -1,0 +1,117 @@
+body{
+    background-color: #E2EFF7;
+}
+
+main{
+    
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 350px;
+    height: auto;
+    gap: 10px !important;
+    -webkit-box-shadow: 0 5px 15px rgba(60, 76, 198, 0.3);
+    box-shadow: 0 5px 15px rgba(60, 76, 198, 0.3);
+}
+
+.card img {
+    border-radius: 10px 10px 0 0;
+    height: 200px;
+    width: 100%;
+    object-fit: cover !important;
+}
+
+.card h2 {
+    font-size: 1.2em;
+}
+
+.card p {
+    font-size: .9em;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-250px * 7)); }
+}
+
+.slider {
+    background: #051D39;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
+    height: 30px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 80vw;
+}
+
+
+.slide-track {
+    animation: scroll 20s linear infinite;
+    display: flex;
+    gap: 20px;
+    animation-play-state: running;
+}
+.slider:hover .slide-track {
+    animation-play-state: paused;
+}
+.slide h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    white-space: nowrap;
+}
+.slide {
+    cursor: pointer;
+    text-align: center;
+    height: 100%;
+    max-width: auto;
+}
+.catNameColor{
+    color: #1894A0;
+}
+.fa-thumbs-up:hover{
+    cursor: pointer;
+    color: #1894A0;
+}
+.fa-thumbs-down:hover{
+    cursor: pointer;
+    color: red;
+}
+#region{
+    color: #fff !important;
+    background-color: #337A9E;
+}
+
+ #region::placeholder{
+    color: #fff !important;
+}
+#listMenu li{
+    padding: 5px 0;
+}
+#listMenu li:hover{
+    border-bottom:  1px solid black;
+}
+.disabled {
+    pointer-events: none;
+    opacity: 0.6; 
+}
+.w50{
+    width: 50%  !important;
+}
+#newsSearch {
+    max-height: 300px;
+    overflow-y: auto;
+    background-color: white;
+    position: absolute;
+    z-index: 10; 
+    border: 1px solid #ccc; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+.boz{
+    background-color: darkgrey;
+}

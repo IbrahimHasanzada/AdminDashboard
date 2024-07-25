@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="output.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+  <nav class="bg-white border-gray-200 dark:bg-gray-900 border-b-2">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
+        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">BBCnews</span>
+      </a>
+      <button data-collapse-toggle="navbar-default" type="button"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        aria-controls="navbar-default" aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M1 1h15M1 7h15M1 13h15" />
+        </svg>
+      </button>
+      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <ul
+          class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+
+          <li><a href="index.htm">Homepage</a></li>
+        </ul>
+      </div>
+    </div>
+    </div>
+  </nav>
+
+
+  <div class="w-full flex justify-center items-center">
+
+    <div id="newsLoad" class="w-20 h-20 border-4 border-dashed rounded-full animate-spin bg-black"></div>
+  </div>
+
+
+  <main class="max-w-screen-2xl flex  flex-col items-center p-4 ">
+
+    <div class="lg:max-w-[60%] md:max-w-[80%] w-full">
+
+      <div class="mt-5 w-full">
+        <img id="image" class="w-full" src="" alt="">
+      </div>
+      <div class="flex w-full justify-between py-3">
+        <h2 class="font-bold catNameColor text-[#1894A0]" id="categ"></h2>
+        <p class="font-medium"><span id="date"></span><span id="time"></span></p>
+        <div>
+          <i class="fa-solid fa-eye"></i> <span id="eye"></span>
+        </div>
+      </div>
+      <div class="">
+        <h2 class="lg:text-4xl md:text-3xl text-2xl font-bold" id="title"></h2>
+      </div>
+      <div class="mt-5">
+        <p class="" id="description"></p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="bg-[#EFF1F0] w-full lg:px-14 py-11 border-t-2">
+    <div class="max-w-screen-2xl lg:m-auto p-4 flex gap-6 justify-evenly flex-col lg:flex-row">
+      <div>
+        <img src="img/logo-big.svg" alt="oxuAz">
+      </div>
+      <div class="max-w-96">
+        <p>Bütün hüquqlar qorunur © 2013-2024</p>
+        <p>Oxu.Az 24 saat ərzində, Azərbaycan və rus dillərində, ölkədə və dünyada baş verən ən aktual və maraqlı
+          hadisələr barədə operativ xəbərlər, oxucuları və cəmiyyəti maraqlandıran suallara cavablar, analitik
+          məqalələr, foto və videohesabatlar hazırlayır.</p>
+      </div>
+      <div>
+        <div>
+          <h2 class="font-bold mb-2">Karyera</h2>
+          <a href="" class="border-b border-[#333]">cv@oxu.az</a>
+        </div>
+        <div>
+          <h2 class="font-bold mb-2">Ümumi sorğular üçün</h2>
+          <p class="mb-2"><a href="" class="border-b border-[#333]">editor@oxu.az</a></p>
+          <p><a href="" class="border-b border-[#333]">055 224 76 86</a></p>
+        </div>
+      </div>
+      <div>
+        <ul>
+          <li><a href="" class="border-b border-[#333]">Saytda reklam</a></li>
+          <li><a href="" class="border-b border-[#333]">Bizimlə əlaqə</a></li>
+          <li><a href="" class="border-b border-[#333]">Məxfilik siyasəti</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/goNews.js"></script>
+</body>
+
+</html>
